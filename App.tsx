@@ -25,6 +25,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import {MenuBar} from './app/layout/Menubar/Menubar';
+import {Banner} from './app/layout/Banner/Banner';
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -71,7 +74,9 @@ function App(): JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
+        {/* <Header /> */}
+        <MenuBar />
+        <Banner />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
