@@ -1,5 +1,6 @@
 import React from 'react';
 import {ImageBackground, View, Text} from 'react-native';
+import {Chip} from 'react-native-paper';
 import {styles} from './styles';
 import {BannerButton} from '../../components/BannerButton/BannerButton';
 
@@ -11,9 +12,11 @@ export function Banner(): JSX.Element {
   return (
     <View>
       <ImageBackground style={styles.background} source={image}>
-        <Text style={styles.text}>new</Text>
-        <Text style={styles.text}>chip</Text>
-        <Text style={styles.text}>new</Text>
+        <View style={styles.uppperBannerContainer}>
+          <Text style={styles.title}>new Lotto millonaires every sunday</Text>
+          <Chip>About 14 million in the first price pot</Chip>
+        </View>
+        <Text style={styles.subText}>Game deadline Saturday at 18:00</Text>
         <View style={styles.buttonContainer}>
           <BannerButton
             title="1 week"
