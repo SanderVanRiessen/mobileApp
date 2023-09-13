@@ -1,26 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
-  StyleSheet,
-  Text,
   useColorScheme,
-  View,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-import {MenuBar} from './app/layout/Menubar/Menubar';
-import {Banner} from './app/layout/Banner/Banner';
+import {MenuBar, Banner, Content, Footer} from './app/layout';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -38,9 +26,10 @@ function App(): JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        {/* <Header /> */}
         <MenuBar />
         <Banner />
+        <Content />
+        <Footer />
       </ScrollView>
     </SafeAreaView>
   );
