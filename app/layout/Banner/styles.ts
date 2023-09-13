@@ -26,8 +26,11 @@ export const styles = StyleSheet.create({
   },
   uppperBannerContainer: {
     width: '100%',
-    height: 180,
+    height: 155,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  chip: {
+    backgroundColor: 'white',
   },
 });

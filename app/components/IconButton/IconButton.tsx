@@ -8,7 +8,15 @@ interface IconButtonProps extends ButtonProps {
   subTitle?: string;
   icon: string;
   onPress?: () => void;
-  width?: number;
+  width?: number | 'auto';
+  height?: number | 'auto';
+  color?: string;
+  subTextColor?: string;
+  backgroundColor?: string;
+  iconColor?: string;
+  iconSize?: number;
+  fontSize?: number;
+  subFontSize?: number;
 }
 
 export function IconButton({
@@ -17,15 +25,34 @@ export function IconButton({
   onPress,
   subTitle,
   width = 180,
+  height = 'auto',
+  color = 'black',
+  subTextColor = 'rgba(0,0,0,0.4);',
+  backgroundColor = '#e2dee7',
+  iconColor = 'black',
+  iconSize = 20,
+  fontSize = 13,
+  subFontSize = 10,
 }: IconButtonProps): JSX.Element {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={onPress}>
+    <View>
+      <TouchableOpacity
+        style={{...styles.button, width, height, backgroundColor}}
+        onPress={onPress}>
         <View style={styles.titleContainer}>
-          <Text style={styles.text}>{title}</Text>
-          {subTitle && <Text style={styles.subText}>{subTitle}</Text>}
+          <Text style={{...styles.text, color, fontSize}}>{title}</Text>
+          {subTitle && (
+            <Text
+              style={{
+                ...styles.subText,
+                color: subTextColor,
+                fontSize: subFontSize,
+              }}>
+              {subTitle}
+            </Text>
+          )}
         </View>
-        <Icon name={icon} size={20} color="black" />
+        <Icon name={icon} size={iconSize} color={iconColor} />
       </TouchableOpacity>
     </View>
   );

@@ -14,7 +14,9 @@ export function Banner(): JSX.Element {
       <ImageBackground style={styles.background} source={image}>
         <View style={styles.uppperBannerContainer}>
           <Text style={styles.title}>new Lotto millonaires every sunday</Text>
-          <Chip>About 14 million in the first price pot</Chip>
+          <Chip style={styles.chip}>
+            About 14 million in the first price pot
+          </Chip>
         </View>
         <Text style={styles.subText}>Game deadline Saturday at 18:00</Text>
         <View style={styles.buttonContainer}>

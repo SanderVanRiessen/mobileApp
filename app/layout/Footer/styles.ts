@@ -6,5 +6,6 @@ export const styles = StyleSheet.create({
     height: '100%',
     alignSelf: 'stretch',
     backgroundColor: '#fff',
+    padding: 10,
   },
 });

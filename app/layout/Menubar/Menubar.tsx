@@ -1,13 +1,18 @@
 import React from 'react';
-import {Text, Button, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {styles} from './styles';
+import {IconButton} from 'react-native-paper';
 
 export function MenuBar(): JSX.Element {
   return (
     <View style={styles.menuContainer}>
-      <Button title="Back" onPress={() => console.log('Button clicked')} />
-      <Text>MenuBar</Text>
-      <Button title="Menu" onPress={() => console.log('Button clicked')} />
+      <Text style={styles.text}>Lotto</Text>
+      <IconButton
+        icon={'menu'}
+        iconColor="white"
+        size={28}
+        onPress={() => console.log('on click')}
+      />
     </View>
   );
 }

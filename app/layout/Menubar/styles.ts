@@ -7,6 +7,12 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 10,
     paddingVertical: 5,
-    backgroundColor: 'blue',
+    backgroundColor: '#00041e',
+    alignItems: 'center',
+  },
+  text: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 18,
   },
 });

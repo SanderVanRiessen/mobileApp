@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
   },
   buttonContainer: {
     elevation: 8,
-    backgroundColor: '#009688',
+    backgroundColor: 'blue',
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
@@ -19,8 +19,8 @@ export const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   buttonSubText: {
-    fontSize: 10,
-    color: 'rgba(0,0,0,0.4);',
+    fontSize: 13,
+    color: 'rgba(0,0,0,0.5);',
     alignSelf: 'center',
   },
 });
