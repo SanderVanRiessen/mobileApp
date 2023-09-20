@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
-export const styles = StyleSheet.create({
-  menuContainer: {
+const styles = StyleSheet.create({
+  container: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -15,10 +15,5 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
   },
-  menu: {
-    width: 250,
-    height: 400,
-    backgroundColor: '#00041e',
-    padding: 20,
-  },
 });
+export default styles;

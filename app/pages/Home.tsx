@@ -1,32 +1,18 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-} from 'react-native';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {SafeAreaView, ScrollView, StatusBar} from 'react-native';
 
 import {MenuBar, Banner, Content, Footer} from '../layout';
 
-function Home(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+interface HomeProps {
+  navigation: any;
+}
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+function Home({navigation}: HomeProps): JSX.Element {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <MenuBar />
+    <SafeAreaView>
+      <StatusBar />
+      <ScrollView>
+        <MenuBar navigation={navigation} />
         <Banner />
         <Content />
         <Footer />
