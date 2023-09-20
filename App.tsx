@@ -1,37 +1,40 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Home} from './app/pages';
+import {Button} from 'react-native';
 
-import {MenuBar, Banner, Content, Footer} from './app/layout';
+const Stack = createNativeStackNavigator();
+
+const HomeScreen = ({navigation}) => {
+  return (
+    <Button
+      title="Go to Jane's profile"
+      onPress={() => navigation.navigate('Profile', {name: 'Jane'})}
+    />
+  );
+};
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <MenuBar />
-        <Banner />
-        <Content />
-        <Footer />
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{title: 'Welcome'}}
+        />
+        <Stack.Screen
+          name="details"
+          component={HomeScreen}
+          options={{title: 'Welcome'}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
