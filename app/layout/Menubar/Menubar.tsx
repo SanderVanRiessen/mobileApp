@@ -15,6 +15,12 @@ export function MenuBar({
   navigation,
 }: MenuBarProps): JSX.Element {
   const [isVisible, setIsVisible] = useState(false);
+
+  const handleRedirect = (dir: string) => {
+    navigation.navigate(dir);
+    setIsVisible(false);
+  };
+
   return (
     <View style={styles.menuContainer}>
       <Text style={styles.text}>{title}</Text>
@@ -30,11 +36,8 @@ export function MenuBar({
         placement={PopoverPlacement.FLOATING}
         popoverShift={{y: 0}}>
         <View style={styles.menu}>
-          <MenuItem title="Home" onPress={() => navigation.navigate('Home')} />
-          <MenuItem
-            title="Tickets"
-            onPress={() => navigation.navigate('Tickets')}
-          />
+          <MenuItem title="Home" onPress={() => handleRedirect('Home')} />
+          <MenuItem title="Tickets" onPress={() => handleRedirect('Tickets')} />
           <MenuItem title="Details" onPress={() => console.log('new')} />
         </View>
       </Popover>
