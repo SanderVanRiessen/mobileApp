@@ -9,6 +9,7 @@ type Pages = {
   Home: undefined;
   Tickets: undefined;
   TicketDetail: {name: string; price: string; description: string};
+  Policy: undefined;
 };
 
 type StackNavigation = NavigationProp<Pages>;

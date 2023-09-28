@@ -4,5 +4,14 @@ import {Banner} from './Banner/Banner';
 import {Footer} from './Footer/Footer';
 import TicketList from './Tickets/TicketList';
 import {TicketContent} from './TicketContent/TicketContent';
+import LotteryPolicy from './Policy/LotteryPolicy';
 
-export {MenuBar, Content, Banner, Footer, TicketList, TicketContent};
+export {
+  MenuBar,
+  Content,
+  Banner,
+  Footer,
+  TicketList,
+  TicketContent,
+  LotteryPolicy,
+};

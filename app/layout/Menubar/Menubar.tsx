@@ -37,7 +37,7 @@ export function MenuBar({title = 'Lotto'}: MenuBarProps): JSX.Element {
         <View style={styles.menu}>
           <MenuItem title="Home" onPress={() => handleRedirect('Home')} />
           <MenuItem title="Tickets" onPress={() => handleRedirect('Tickets')} />
-          <MenuItem title="Details" onPress={() => console.log('new')} />
+          <MenuItem title="Policy" onPress={() => handleRedirect('Policy')} />
         </View>
       </Popover>
     </View>

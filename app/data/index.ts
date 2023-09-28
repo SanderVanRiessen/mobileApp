@@ -1,3 +1,4 @@
 import inTickets from './tickets';
+import policyContent from './policy';
 
-export {inTickets};
+export {inTickets, policyContent};
