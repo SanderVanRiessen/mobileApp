@@ -4,20 +4,19 @@ import {styles} from './styles';
 import MenuItem from './MenuItem';
 import {IconButton} from 'react-native-paper';
 import Popover, {PopoverPlacement} from 'react-native-popover-view';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigation} from '../../types/types';
 
 interface MenuBarProps {
-  navigation: any;
   title?: string;
 }
 
-export function MenuBar({
-  title = 'Lotto',
-  navigation,
-}: MenuBarProps): JSX.Element {
+export function MenuBar({title = 'Lotto'}: MenuBarProps): JSX.Element {
+  const {navigate} = useNavigation<StackNavigation>();
   const [isVisible, setIsVisible] = useState(false);
 
   const handleRedirect = (dir: string) => {
-    navigation.navigate(dir);
+    navigate(dir);
     setIsVisible(false);
   };
 

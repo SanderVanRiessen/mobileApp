@@ -3,16 +3,12 @@ import {SafeAreaView, ScrollView, StatusBar} from 'react-native';
 
 import {MenuBar, Banner, Content, Footer} from '../layout';
 
-interface HomeProps {
-  navigation: any;
-}
-
-function Home({navigation}: HomeProps): JSX.Element {
+function Home(): JSX.Element {
   return (
     <SafeAreaView>
       <StatusBar />
       <ScrollView>
-        <MenuBar navigation={navigation} />
+        <MenuBar />
         <Banner />
         <Content />
         <Footer />

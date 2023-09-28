@@ -1,6 +1,16 @@
+import {NavigationProp} from '@react-navigation/native';
+
 type Ticket = {
   name: string;
   price: string;
 };
 
-export type {Ticket};
+type Pages = {
+  Home: undefined;
+  Tickets: undefined;
+  TicketDetail: {name: string; price: string; description: string};
+};
+
+type StackNavigation = NavigationProp<Pages>;
+
+export type {Ticket, StackNavigation, Pages};
