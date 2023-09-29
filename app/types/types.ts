@@ -19,8 +19,13 @@ type Pages = {
   TicketDetail: {name: string; price: string; description: string};
   Policy: undefined;
   PolicyMain: undefined;
+  Cart: {cart: CardProps[]};
 };
 
 type StackNavigation = NavigationProp<Pages>;
 
-export type {Ticket, StackNavigation, Pages, BarIconsProps};
+interface CardProps extends Ticket {
+  amount: number;
+}
+
+export type {Ticket, StackNavigation, Pages, BarIconsProps, CardProps};

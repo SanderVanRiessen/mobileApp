@@ -5,6 +5,7 @@ import {Footer} from './Footer/Footer';
 import TicketList from './Tickets/TicketList';
 import {TicketContent} from './TicketContent/TicketContent';
 import LotteryPolicy from './Policy/LotteryPolicy';
+import Checkout from './Checkout/Checkout';
 
 export {
   MenuBar,
@@ -14,4 +15,5 @@ export {
   TicketList,
   TicketContent,
   LotteryPolicy,
+  Checkout,
 };

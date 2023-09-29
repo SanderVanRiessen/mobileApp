@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import {Home, Tickets, TicketDetail, Policy} from './app/pages';
+import {Home, Tickets, TicketDetail, Policy, Cart} from './app/pages';
 import {BarIconsProps, Pages} from './app/types/types';
 
 const HomeStack = createNativeStackNavigator<Pages>();
@@ -19,6 +19,7 @@ const TicketsStackScreen = () => (
   <TicketsStack.Navigator screenOptions={{headerShown: false}}>
     <TicketsStack.Screen name="TicketsList" component={Tickets} />
     <TicketsStack.Screen name="TicketDetail" component={TicketDetail} />
+    <TicketsStack.Screen name="Cart" component={Cart} />
   </TicketsStack.Navigator>
 );
 

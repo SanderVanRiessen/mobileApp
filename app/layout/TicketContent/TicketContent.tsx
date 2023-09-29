@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
 import {TicketSale} from '../../components';
@@ -18,7 +18,7 @@ export function TicketContent({
   price,
   description,
 }: TicketContent): JSX.Element {
-  const [currentTicket, setCurrentTicket] = React.useState<Ticket | null>(null);
+  const [currentTicket, setCurrentTicket] = useState<Ticket | null>(null);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{name}</Text>
@@ -37,6 +37,7 @@ export function TicketContent({
           ticket={currentTicket.name}
           price={currentTicket.price}
           onClose={() => setCurrentTicket(null)}
+          onBuy={() => setCurrentTicket(null)}
         />
       )}
     </View>

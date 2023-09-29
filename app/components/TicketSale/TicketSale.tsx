@@ -9,8 +9,9 @@ interface TicketSaleProps {
   onClose: () => void;
   ticket: string;
   price: string;
+  onBuy: (count?: number) => void;
 }
-const TicketSale = ({onClose, ticket, price}: TicketSaleProps) => {
+const TicketSale = ({onClose, ticket, price, onBuy}: TicketSaleProps) => {
   const [count, setCount] = useState(0);
   return (
     <Popover
@@ -45,7 +46,7 @@ const TicketSale = ({onClose, ticket, price}: TicketSaleProps) => {
             title="Buy"
             width={150}
             icon="shopping-cart"
-            onPress={() => onClose()}
+            onPress={() => onBuy(count)}
           />
         </View>
       </View>

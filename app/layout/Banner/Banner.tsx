@@ -45,6 +45,7 @@ export function Banner(): JSX.Element {
           ticket={currentTicket.name}
           price={currentTicket.price}
           onClose={() => setCurrentTicket(null)}
+          onBuy={() => setCurrentTicket(null)}
         />
       )}
     </View>
