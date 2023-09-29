@@ -14,11 +14,10 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 18,
+    paddingVertical: 5,
+    paddingRight: 10,
   },
-  menu: {
-    width: 250,
-    height: 400,
-    backgroundColor: '#00041e',
-    padding: 20,
+  backButton: {
+    margin: 0,
   },
 });
