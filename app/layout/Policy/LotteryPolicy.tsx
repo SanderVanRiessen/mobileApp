@@ -14,8 +14,8 @@ const LotteryPolicy = () => {
             <Text style={styles.number}>{section.id}</Text>
             <Text style={styles.subText}>{section.title}</Text>
           </View>
-          {section.content.map((content, index) => (
-            <Text key={index} style={styles.content}>
+          {section.content.map((content, i) => (
+            <Text key={i} style={styles.content}>
               {content}
             </Text>
           ))}

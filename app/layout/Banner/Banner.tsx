@@ -24,14 +24,28 @@ export function Banner(): JSX.Element {
         <Text style={styles.subText}>Game deadline Saturday at 18:00</Text>
         <View style={styles.buttonContainer}>
           <BannerButton
-            title="1 week"
-            subtitle="50kr"
-            onPress={() => setCurrentTicket({name: '1 week', price: '50kr'})}
+            title="1 lottery ticket"
+            subtitle="2.5"
+            onPress={() =>
+              setCurrentTicket({
+                name: '1 lottery ticket',
+                price: 2.5,
+                description: '1 lottery ticket',
+                id: 0,
+              })
+            }
           />
           <BannerButton
-            title="5 week"
-            subtitle="250kr"
-            onPress={() => setCurrentTicket({name: '1 week', price: '50kr'})}
+            title="5 lottery ticket"
+            subtitle="15"
+            onPress={() =>
+              setCurrentTicket({
+                name: '5 lottery ticket',
+                price: 15,
+                description: '5 lottery ticket',
+                id: 99,
+              })
+            }
           />
           <BannerButton title="Subscribe" onPress={() => console.log('new')} />
           <BannerButton
@@ -42,10 +56,9 @@ export function Banner(): JSX.Element {
       </ImageBackground>
       {currentTicket && (
         <TicketSale
-          ticket={currentTicket.name}
+          name={currentTicket.name}
           price={currentTicket.price}
           onClose={() => setCurrentTicket(null)}
-          onBuy={() => setCurrentTicket(null)}
         />
       )}
     </View>

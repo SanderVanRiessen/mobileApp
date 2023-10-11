@@ -4,9 +4,7 @@ import styles from './styles';
 import {TicketSale} from '../../components';
 import {Ticket} from '../../types/types';
 
-interface TicketContent {
-  name: string;
-  price: string;
+interface TicketContent extends Ticket {
   description: string;
 }
 
@@ -17,6 +15,7 @@ export function TicketContent({
   name,
   price,
   description,
+  id,
 }: TicketContent): JSX.Element {
   const [currentTicket, setCurrentTicket] = useState<Ticket | null>(null);
   return (
@@ -29,15 +28,15 @@ export function TicketContent({
         }}
       />
       <Text style={styles.description}>{description}</Text>
-      <TouchableOpacity onPress={() => setCurrentTicket({name, price})}>
+      <TouchableOpacity
+        onPress={() => setCurrentTicket({name, price, description, id})}>
         <Text style={styles.buyButton}>buy</Text>
       </TouchableOpacity>
       {currentTicket && (
         <TicketSale
-          ticket={currentTicket.name}
+          name={currentTicket.name}
           price={currentTicket.price}
           onClose={() => setCurrentTicket(null)}
-          onBuy={() => setCurrentTicket(null)}
         />
       )}
     </View>

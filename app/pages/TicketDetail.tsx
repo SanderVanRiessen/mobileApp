@@ -7,13 +7,18 @@ import {Pages} from '../types/types';
 
 function TicketDetail(): JSX.Element {
   const {params} = useRoute<RouteProp<Pages, 'TicketDetail'>>();
-  const {name, price, description} = params;
+  const {name, price, description, id} = params;
   return (
     <SafeAreaView>
       <StatusBar />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <MenuBar title={name} />
-        <TicketContent name={name} price={price} description={description} />
+        <TicketContent
+          name={name}
+          price={price}
+          description={description}
+          id={id}
+        />
         <Footer />
       </ScrollView>
     </SafeAreaView>

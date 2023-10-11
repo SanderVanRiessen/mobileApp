@@ -2,7 +2,9 @@ import {NavigationProp} from '@react-navigation/native';
 
 type Ticket = {
   name: string;
-  price: string;
+  price: number;
+  description: string;
+  id: number;
 };
 
 interface BarIconsProps {
@@ -16,16 +18,19 @@ type Pages = {
   Main: undefined;
   Tickets: undefined;
   TicketsList: undefined;
-  TicketDetail: {name: string; price: string; description: string};
+  TicketDetail: Ticket;
   Policy: undefined;
   PolicyMain: undefined;
-  Cart: {cart: CardProps[]};
+  Cart: undefined;
 };
 
 type StackNavigation = NavigationProp<Pages>;
 
-interface CardProps extends Ticket {
+interface CardProps {
   amount: number;
+  id: number;
+  name: string;
+  price: number;
 }
 
 export type {Ticket, StackNavigation, Pages, BarIconsProps, CardProps};

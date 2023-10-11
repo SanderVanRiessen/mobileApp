@@ -6,23 +6,26 @@ import {StackNavigation} from '../../types/types';
 
 interface TicketCardProps {
   name: string;
-  subtitle: string;
+  price: number;
   description: string;
   onPress: () => void;
+  id: number;
 }
 
 const TicketCard = ({
   name,
-  subtitle,
+  price,
   description,
+  id,
   onPress,
 }: TicketCardProps) => {
   const navigation = useNavigation<StackNavigation>();
   const redirectDetails = () => {
     navigation.navigate('TicketDetail', {
       name,
-      price: subtitle,
+      price,
       description,
+      id,
     });
   };
 
@@ -30,7 +33,7 @@ const TicketCard = ({
     <View style={styles.container}>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{name}</Text>
-        <Text style={styles.subText}>{subtitle}</Text>
+        <Text style={styles.subText}>{price}€</Text>
         <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={redirectDetails}>
             <Text style={styles.detailButton}>Details</Text>
