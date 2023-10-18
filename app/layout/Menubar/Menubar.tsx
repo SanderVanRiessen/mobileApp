@@ -1,16 +1,33 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import {Text, View} from 'react-native';
 import {styles} from './styles';
 import {IconButton} from 'react-native-paper';
-import {useNavigation} from '@react-navigation/native';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import {StackNavigation} from '../../types/types';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 interface MenuBarProps {
   title?: string;
 }
 
-export function MenuBar({title = 'Lotto'}: MenuBarProps): JSX.Element {
+export function MenuBar({title}: MenuBarProps): JSX.Element {
   const {canGoBack, goBack} = useNavigation<StackNavigation>();
+
+  const [username, setUsername] = useState('Lotto');
+  useFocusEffect(
+    useCallback(() => {
+      loadProfile();
+    }, []),
+  );
+  const loadProfile = () => {
+    AsyncStorage.getItem('profile').then(e => {
+      if (e) {
+        setUsername(JSON.parse(e).username);
+      } else {
+        setUsername('Lotto');
+      }
+    });
+  };
 
   return (
     <View style={styles.menuContainer}>
@@ -23,7 +40,7 @@ export function MenuBar({title = 'Lotto'}: MenuBarProps): JSX.Element {
           onPress={() => goBack()}
         />
       )}
-      <Text style={styles.text}>{title}</Text>
+      <Text style={styles.text}>{title || username}</Text>
     </View>
   );
 }

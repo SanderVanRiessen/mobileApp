@@ -37,6 +37,21 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
   },
+  invoice: {
+    display: 'flex',
+    flexDirection: 'row',
+    margin: 10,
+  },
+  label: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#000',
+    width: '30%',
+  },
+  value: {
+    fontSize: 15,
+    color: '#000',
+  },
 });
 
 export default styles;

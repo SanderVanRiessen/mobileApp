@@ -35,4 +35,16 @@ interface CardProps {
   price: number;
 }
 
-export type {Ticket, StackNavigation, Pages, BarIconsProps, CardProps};
+interface ProfileProps {
+  username: string;
+  email: string;
+}
+
+export type {
+  Ticket,
+  StackNavigation,
+  Pages,
+  BarIconsProps,
+  CardProps,
+  ProfileProps,
+};
