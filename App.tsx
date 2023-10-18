@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import {Home, Tickets, TicketDetail, Policy, Cart} from './app/pages';
+import {Home, Tickets, TicketDetail, Policy, Cart, Settings} from './app/pages';
 import {BarIconsProps, Pages} from './app/types/types';
 
 const HomeStack = createNativeStackNavigator<Pages>();
@@ -30,6 +30,13 @@ const PolicyStackScreen = () => (
   </PolicyStack.Navigator>
 );
 
+const SettingsStack = createNativeStackNavigator<Pages>();
+const SettingsStackScreen = () => (
+  <SettingsStack.Navigator screenOptions={{headerShown: false}}>
+    <SettingsStack.Screen name="SettingsMain" component={Settings} />
+  </SettingsStack.Navigator>
+);
+
 const Tab = createBottomTabNavigator<Pages>();
 
 function barIcons({name, color, size}: BarIconsProps): JSX.Element {
@@ -39,6 +46,9 @@ function barIcons({name, color, size}: BarIconsProps): JSX.Element {
   }
   if (name === 'Policy') {
     iconName = 'user';
+  }
+  if (name === 'Settings') {
+    iconName = 'cog';
   }
   return <Icon name={iconName} size={size} color={color} />;
 }
@@ -57,6 +67,7 @@ function App(): JSX.Element {
         <Tab.Screen name="Home" component={HomeStackScreen} />
         <Tab.Screen name="Tickets" component={TicketsStackScreen} />
         <Tab.Screen name="Policy" component={PolicyStackScreen} />
+        <Tab.Screen name="Settings" component={SettingsStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

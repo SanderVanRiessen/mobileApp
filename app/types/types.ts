@@ -22,6 +22,8 @@ type Pages = {
   Policy: undefined;
   PolicyMain: undefined;
   Cart: undefined;
+  Settings: undefined;
+  SettingsMain: undefined;
 };
 
 type StackNavigation = NavigationProp<Pages>;

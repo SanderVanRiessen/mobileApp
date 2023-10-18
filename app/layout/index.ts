@@ -6,6 +6,7 @@ import TicketList from './Tickets/TicketList';
 import {TicketContent} from './TicketContent/TicketContent';
 import LotteryPolicy from './Policy/LotteryPolicy';
 import Checkout from './Checkout/Checkout';
+import {SettingsContent} from './Settings/Settings';
 
 export {
   MenuBar,
@@ -16,4 +17,5 @@ export {
   TicketContent,
   LotteryPolicy,
   Checkout,
+  SettingsContent,
 };
